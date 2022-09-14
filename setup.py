@@ -55,16 +55,10 @@ setup(
             "parsers/*.py",
             "plugins/*.py",
             "*.json",
-            "*.ui"
+            "*.ui",
+            "*.qss",
         ]
     },
-    # data_files will find all other files. It is a list of two member tuples.
-    # The first item of the tuple is the desired destination folder
-    # The second member of the tuple is a list of source files.
-    # Given data_files=[("xml_data", ["xml_examples/xml1.xml"])], xml1.xml will
-    # be copied to the "xml_data" folder of the destination package.
-    # the xml_examples folder will not be copied or created.
-    data_files=[("usdmanager", ["usdmanager/usdviewstyle.qss"])],
     scripts=glob("scripts/*"),
     install_requires=[
         "Qt.py>=1.1",
@@ -74,5 +68,7 @@ setup(
         "setuptools>=2.2",
     ],
     tests_require=[],
-    dependency_links=[],
+    dependency_links=[
+        "https://github.com/pyside/pyside2-tools/archive/refs/tags/2.0.0.dev0.tar.gz",
+    ],
 )

@@ -42,8 +42,9 @@ Installing USD Manager
 Requirements
 ------------
 
-usdmanager requires Python 2, [Qt.py](https://github.com/mottosso/Qt.py) and [setuptools](https://github.com/pypa/setuptools)
-(can be handled by setup.py), and one of Qt.py's 4 supported Qt bindings, which will need to be installed separately.
+usdmanager requires Python 3, [Qt.py](https://github.com/mottosso/Qt.py) and [setuptools](https://github.com/pypa/setuptools)
+(can be handled by setup.py). Obviously USD is required, and one of Qt.py's 4 supported Qt bindings
+(PySide2, PyQt5, PySide, or PyQt4), which will need to be installed separately.
 
 Install with setup.py
 ---------------------
@@ -56,6 +57,19 @@ python setup.py install
 For a personal install, try:
 ```
 python setup.py install --user
+```
+
+Install with rez-pip
+--------------------
+
+If your studio is using rez, it can be installed by:
+```
+rez-pip --install git+https://github.com/dreamworksanimation/usdmanager.git@python3
+```
+
+To specify a python version or install location, do:
+```
+rez-pip --python-version 3.9 --install --prefix /path/to/rez/packages git+https://github.com/dreamworksanimation/usdmanager.git@python3
 ```
 
 Studios with significant python codebases or non-trivial installs may need to customize setup.py
